@@ -1,14 +1,9 @@
 <div id="<%= dom_id post %>">
   <p>
-    <strong>Body:</strong>
+  <% if user_signed_in? %>
+    <strong><%= post.user.username %> wrote: </strong>
+  <% end %>
     <%= post.body %>
   </p>
-
-  <% if user_signed_in? %>
-  <p>
-    <strong>User:</strong>
-    <%= post.user.username %>
-  </p>
-  <% end %>
 
 </div>
